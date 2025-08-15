@@ -15,4 +15,14 @@ public class CalculatorStepdefs {
         calculator = new Calculator();
     }
 
+    @When("I enter {double} and {double} with the operator {string}")
+    public void i_enter_and_with_the_operator(Double operand1, Double operand2, String operator) {
+        result = calculator.calculate(operand1, operand2, operator);
+    }
+
+    @Then("the result should be {double}")
+    public void the_result_should_be(Double expectedResult) {
+        assertEquals(expectedResult, result, 0.001);
+    }
+
 }
