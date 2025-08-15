@@ -6,6 +6,6 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"pretty"})
-public class RunCucamberTest {
+public class RunCucumberTest {
     // This class should be empty
 }
