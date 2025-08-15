@@ -25,4 +25,19 @@ public class CalculatorStepdefs {
         assertEquals(expectedResult, result, 0.001);
     }
 
+    @When("I try to divide {double} by {double}")
+    public void i_try_to_divide_by(Double operand1, Double operand2) {
+        try {
+            calculator.calculate(operand1, operand2, "/");
+        } catch (IllegalArgumentException e) {
+            thrownException = e;
+        }
+    }
+
+    @Then("the operation should throw an exception")
+    public void the_operation_should_throw_an_exception() {
+        assertNotNull(thrownException);
+        assertTrue(thrownException instanceof IllegalArgumentException);
+    }
+
 }
