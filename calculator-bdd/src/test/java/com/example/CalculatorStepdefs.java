@@ -10,4 +10,9 @@ public class CalculatorStepdefs {
     private double result;
     private Exception thrownException;
 
+    @Given("I have a calculator")
+    public void i_have_a_calculator() {
+        calculator = new Calculator();
+    }
+
 }
